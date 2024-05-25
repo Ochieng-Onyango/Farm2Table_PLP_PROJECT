@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farm2Table</title>
-    <link rel="stylesheet" href="Styles/general.css">
+    <link rel="stylesheet" href="/Styles/general.css">
 </head>
 <body>
     <header>
@@ -23,12 +23,30 @@
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
+        <section id="products">
             <div class="container">
-                <h1>Connecting Local Farmers with Fresh Produce</h1>
-                <p>Shop locally sourced poultry products straight from the farm to your table.</p>
-                <a href="products.html"><button>Browse Products</button></a>
+                <h2>Featured Products</h2>
+                <div class="filters">
+                    <label for="category">Filter by Category:</label>
+                    <select id="category">
+                        <option value="all">All</option>
+                        <option value="eggs">Eggs</option>
+                        <option value="meat">Meat</option>
+                        <!-- Add more categories here -->
+                    </select>
+                </div>
+                <div class="product-list">
+                    <!-- Product listings will be added dynamically here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="farmers">
+            <div class="container">
+                <h2>Meet Our Farmers</h2>
+                <div class="farmer-list">
+                    <!-- Farmer listings will be added dynamically here -->
+                </div>
             </div>
         </section>
     </main>

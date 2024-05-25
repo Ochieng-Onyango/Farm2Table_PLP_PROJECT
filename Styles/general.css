@@ -101,6 +101,7 @@ main {
 #hero button:hover,#about button:hover {
     /* background-color: #218838; */
     background: linear-gradient(11deg, #c83852, #b44092 50%, #6a5fc1);
+    transition: 0.3s;
 }
 
 .container {
