@@ -12,8 +12,8 @@ body {
 }
 
 header {
+    background-color: rgba(153, 151, 151, 0.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
     padding: 10px 20px;
     color: #333;
     position: fixed;
@@ -26,12 +26,9 @@ nav {
     align-items: center;
 }
 
-nav a#logo {
-    box-sizing: border-box;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
+nav a#logo img{
+    width: 50px;
+    border-radius: 25px;
 }
 
 
@@ -67,20 +64,21 @@ nav ul li img{
 }
 
 #auth-buttons button {
-    background-color: #333;
+    background-color: #888686;
     border-radius: 5px;
     padding: 5px 10px;
     color: #fff;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 10px;
-    margin-right: 25px;
+    margin-right: 40px;
+    border: none;
 }
 
 #auth-buttons button:hover {
     background: linear-gradient(120deg, #c83852, #b44092 50%, #6a5fc1);
     color: #fff;
     font-weight: bold;
+    border: none;
 }
 
 main {
