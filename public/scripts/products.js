@@ -2,7 +2,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const products = [
       { name: 'Fresh Eggs', category: 'eggs', price: 8.0, image: '../images/egg.jpg' },
-      { name: 'Chicken', category: 'meat', price: 10.00, image: '../images/chicken.png' },
+      { name: 'Meat', category: 'meat', price: 10.00, image: '../images/meat.jpg' },
+      { name: 'Chicken', category: 'chicken', price: 13.00, image: '../images/chicken.png' },
+      { name: 'Fertilised Eggs', category: 'eggs', price: 8.0, image: '../images/eggs.jpg' },
+      { name: 'Chopped-Chicken-Meat', category: 'meat', price: 10.00, image: '../images/chopped.webp' },
+      { name: 'Cockrel', category: 'chicken', price: 13.00, image: '../images/cockrel.webp' },
     ];
   
     const categorySelect = document.getElementById('category');

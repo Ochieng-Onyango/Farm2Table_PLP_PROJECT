@@ -34,11 +34,6 @@ nav a#logo {
     text-decoration: none;
 }
 
-nav a#logo:hover{
-    text-decoration: underline;
-    text-decoration-color: rgb(0, 255, 42);
-    text-decoration-thickness: 5px;
-}
 
 nav ul {
     list-style: none;
@@ -60,12 +55,10 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
-    text-decoration-color: rgb(0, 255, 42);
-    text-decoration-thickness: 5px;
-    
-}
+    text-decoration-color: #333;
+    }
 
-.cart img{
+nav ul li img{
     width: 30px;
 }
 
@@ -74,19 +67,20 @@ nav ul li a:hover {
 }
 
 #auth-buttons button {
-    background-color: #fff;
+    background-color: #333;
     border-radius: 5px;
     padding: 5px 10px;
+    color: #fff;
     cursor: pointer;
     font-size: 16px;
     margin-left: 10px;
-    font-weight: bold;
     margin-right: 25px;
 }
 
 #auth-buttons button:hover {
     background: linear-gradient(120deg, #c83852, #b44092 50%, #6a5fc1);
     color: #fff;
+    font-weight: bold;
 }
 
 main {
@@ -108,7 +102,13 @@ main {
     text-align: center;
 }
 
-#hero button,#about button {
+.browse-products, .meet-farmers {
+    margin-left: 40%;
+    width: 200px;
+}
+
+.browse-products button, .meet-farmers button{
+    width: 1fr;
     background-color: #ddd;
     color: #333;
     border: none;
@@ -117,9 +117,9 @@ main {
     cursor: pointer;
     font-size: 18px;
     transition: 0.3s;
-}
+}    
 
-#hero button:hover,#about button:hover {
+.browse-products button:hover, .meet-farmers button:hover{
     background: linear-gradient(11deg, #c83852, #b44092 50%, #6a5fc1);
     color: #fff;
     
@@ -145,12 +145,13 @@ main {
 }
 
 footer {
-    background-color: #333;
+    background-color: rgba(153, 151, 151, 0.5);
     color: white;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.5);
 }
 
 footer ul{
