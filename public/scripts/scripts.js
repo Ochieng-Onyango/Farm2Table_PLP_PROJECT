@@ -37,4 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     meetFarmersBtn.addEventListener('click', () => {
         window.location.href = 'products.html#farmers';
       });
+
+      renderCartItems();
 });

@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renderCartItems() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = document.querySelector('.cart-count');
+        const cartCountFromStorage = localStorage.getItem('cartCount') || 0;
+        cartCount.textContent = cartCountFromStorage;
         let total = 0;
     
         const cartGrid = document.querySelector('.cart-grid');

@@ -52,7 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
       function updateCartCount() {
+        const cartCount = document.querySelector('.cart-count');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
       cartCount.textContent = cart.length;
+      localStorage.setItem('cartCount', cart.length);
   }
 
       function renderCartItems() {
