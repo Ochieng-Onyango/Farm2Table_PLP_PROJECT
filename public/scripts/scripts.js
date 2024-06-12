@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.querySelector('form[action="/register"]');
     const loginForm = document.querySelector('form[action="/login"]');
+    const meetFarmersBtn = document.querySelector('.meet-farmers button');
 
-    if (registerForm) {
+  if (registerForm) {
         registerForm.addEventListener('submit', (event) => {
             event.preventDefault();
             const formData = new FormData(registerForm);
@@ -32,4 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    meetFarmersBtn.addEventListener('click', () => {
+        window.location.href = 'products.html#farmers';
+      });
 });

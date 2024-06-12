@@ -1,7 +1,7 @@
 //products.js
 document.addEventListener('DOMContentLoaded', function() {
     const products = [
-      { name: 'Fresh Eggs', category: 'eggs', price: 8.0, image: '../images/egg.jpg' },
+      {name: 'Fresh Eggs', category: 'eggs', price: 8.0, image: '../images/egg.jpg' },
       { name: 'Meat', category: 'meat', price: 10.00, image: '../images/meat.jpg' },
       { name: 'Chicken', category: 'chicken', price: 13.00, image: '../images/chicken.png' },
       { name: 'Fertilised Eggs', category: 'eggs', price: 8.0, image: '../images/eggs.jpg' },
@@ -12,8 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
       { name: 'Marinated-Turkey', category: 'meat', price: 15.00, image: '../images/marinated-turkey.jpg' },
     ];
   
+    let cart = [];
     const categorySelect = document.getElementById('category');
     const productList = document.querySelector('.product-list');
+    const cartIcon = document.getElementById('cart-icon');
+    const cartCount = document.getElementById('cart-count');
+    const cartSection = document.getElementById('cart-section');
+    const cartItems = document.getElementById('cart-items');
   
     function renderProducts(category) {
       let filteredProducts = products;
@@ -31,10 +36,46 @@ document.addEventListener('DOMContentLoaded', function() {
           <p>Price: $${product.price.toFixed(2)}</p>
           <button class="btn add-to-cart"> Add to Cart </button>
         `;
-        productList.appendChild(productItem);});
+        productList.appendChild(productItem);
+
+        const addToCartButton = productItem.querySelector('.add-to-cart');
+        addToCartButton.addEventListener('click', () => {
+            addToCart(product);
+          });
+
+        });
     }
+
+      function addToCart(product) {
+      cart.push(product);
+      updateCartCount();
+  }
+
+      function updateCartCount() {
+      cartCount.textContent = cart.length;
+  }
+
+      function renderCartItems() {
+      cartItems.innerHTML = '';
+      cart.forEach(product => {
+          const cartItem = document.createElement('div');
+          cartItem.classList.add('cart-item');
+          cartItem.innerHTML = `
+              <img src="${product.image}" alt="${product.name}">
+              <h3>${product.name}</h3>
+              <p>Price: $${product.price.toFixed(2)}</p>
+          `;
+          cartItems.appendChild(cartItem);
+      });
+  }
+
+      cartIcon.addEventListener('click', () => {
+      cartSection.style.display = cartSection.style.display === 'none' ? 'block' : 'none';
+      renderCartItems();
+  });
   
     renderProducts('all');
+    renderFarmers(); // Call the renderFarmers function from farmers.js
   
     categorySelect.addEventListener('change', function() {
       const selectedCategory = this.value;
