@@ -86,6 +86,14 @@ document.addEventListener('DOMContentLoaded', function() {
       if (event.target.classList.contains('add-to-cart')) {
         const productName = event.target.previousElementSibling.previousElementSibling.textContent;
         alert(`${productName} added to cart!`);
+
+        function addToCart(product) {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cart.push(product);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateCartCount();
+      }
       }
     });
+
  });

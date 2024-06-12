@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Your Orders</title>
     <link rel="icon" type="image/x-icon" href="../images/Farm2Table.png">
     <link rel="stylesheet" href="./Styles/general.css">
-    <link rel="stylesheet" href="./Styles/contact.css">
+    <link rel="stylesheet" href="./Styles/orders.css">
 </head>
 <body>
     <header>
         <nav>
             <a href="home.html" id="logo"><img src="../images/Farm2Table.png" alt=""></a>
             <ul>
-                <li><a href="home.html">Home</a></li>
+               <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="orders.html">Orders</a></li>
                 <li>
-                  <img src="../images/cart-icon.png" alt="">
-                  <span id="cart-count">0</span>
-              </li>
+                    <img src="../images/cart-icon.png" alt="">
+                    <span id="cart-count">0</span>
+                </li>
             </ul>
             <div id="auth-buttons">
                 <button id="logout-btn">Logout</button>
@@ -30,25 +30,21 @@
         </nav>
     </header>
     <main>
-    <section class="form">
-        <div class="contact-form" id="contact">
-            <h2>Contact Us</h2>
-            <form action="/submit_form" method="post">
-              <input type="text" name="name" placeholder="Your name" required>
-              <input type="text" name="email" placeholder="Your email" required>
-              <textarea name="message" placeholder="Write something.." required></textarea>
-              <button type="submit">Send</button>
-            </form>
-          </div>
-      </section>
+        <section id="orders">
+            <div class="container">
+                <h2>Your Orders</h2>
+                <div class="cart-grid">
+                    <!-- Cart items will be rendered here -->
+                </div>
+                <div id="total-price"></div>
+            </div>
+        </section>
     </main>
-      
-      <footer>
+    <footer>
         <div class="container">
-          <p>&copy; 2024 Farm2Table. All rights reserved.</p>
+            <p>&copy; 2024 Farm2Table. All rights reserved.</p>
         </div>
-      </footer>
-    
-      <script src="./scripts/scripts.js"></script>
+    </footer>
+    <script src="./scripts/orders.js"></script>
 </body>
 </html>
