@@ -1,9 +1,4 @@
 /* orders.css */
-.header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
 
 .container {
     text-align: center;
@@ -36,4 +31,19 @@
 #total-price {
     font-weight: bold;
     margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(120deg, #c83852, #b44092 50%, #6a5fc1);
+    font-weight: bold;
 }

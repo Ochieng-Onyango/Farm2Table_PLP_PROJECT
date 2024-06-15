@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Orders</title>
+    <title>Payment</title>
     <link rel="icon" type="image/x-icon" href="../images/Farm2Table.png">
     <link rel="stylesheet" href="./Styles/general.css">
-    <link rel="stylesheet" href="./Styles/orders.css">
+    <link rel="stylesheet" href="./Styles/payment.css">
 </head>
 <body>
     <header>
@@ -35,16 +35,38 @@
         </nav>
     </header>
     <main>
-        <section id="orders">
-            <div class="container">
-                <h2>Your Orders</h2>
-                <button id="clear-orders-btn">Clear Orders</button>
-                <button id="proceed-to-payment-btn">Proceed to Payment</button>
-                <div class="cart-grid">
-                    <!-- Cart items will be rendered here -->
-                </div>
-                <div id="total-price"></div>
-            </div>
+        <section id="payment">
+            <form action="#" method="post">
+
+                <h1>Payment form</h1>
+              
+                <section>
+                  <label>Card number</label>
+                  <input>
+                </section>
+              
+                <section>
+                  <label>Name on card</label>
+                  <input>
+                </section>
+              
+                <section id="expiry-date">
+                  <div>
+                    <label>Expiry date</label>
+                    <input>
+                  </div>
+                  <div>
+                    <label>Security code</label>
+                    <input>
+                    <div class="explanation">Last 3 digits on back of card</div>
+                  </div>
+                </section>
+              
+                <button id="complete-payment">Complete payment</button>
+              
+              </form>
+           
+                
         </section>
     </main>
     <footer>
@@ -52,6 +74,7 @@
             <p>&copy; 2024 Farm2Table. All rights reserved.</p>
         </div>
     </footer>
-    <script src="./scripts/orders.js"></script>
+    <script src="./scripts/scripts.js"></script>
+    <script src="./scripts/products.js"></script>
 </body>
 </html>
