@@ -1,3 +1,4 @@
+// orders.js
 document.addEventListener('DOMContentLoaded', function() {
     const cartItems = document.getElementById('cart-items');
     const totalPrice = document.getElementById('total-price');

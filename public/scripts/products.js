@@ -12,11 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
       { name: 'Marinated-Turkey', category: 'meat', price: 15.00, image: '../images/marinated-turkey.jpg' },
     ];
   
-    let cart = [];
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const categorySelect = document.getElementById('category');
     const productList = document.querySelector('.product-list');
     const cartIcon = document.getElementById('cart-icon');
-    const cartCount = document.getElementById('cart-count');
+    const cartCount = document.querySelector('.cart-count');
+
+    // Initialize cart count
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cartCount.textContent = cart.length;
+      localStorage.setItem('cartCount', cart.length);
+  }
+  updateCartCount(); // Initial call to set the cart count
+
     const cartSection = document.getElementById('cart-section');
     const cartItems = document.getElementById('cart-items');
   
@@ -29,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
       productList.innerHTML = '';
       filteredProducts.forEach(product => {
         const productItem = document.createElement('div');
-        productItem.classList.add('product');
+        productItem.classList.add('product-item');
         productItem.innerHTML = `
           <img src="${product.image}" alt="${product.name}">
           <h3>${product.name}</h3>
@@ -46,16 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-      function addToCart(product) {
+    function addToCart(product) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
       cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
-  }
-
-      function updateCartCount() {
-        const cartCount = document.querySelector('.cart-count');
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cartCount.textContent = cart.length;
-      localStorage.setItem('cartCount', cart.length);
+      alert(`${product.name} added to cart!`);
   }
 
       function renderCartItems() {
@@ -72,31 +77,19 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-      cartIcon.addEventListener('click', () => {
-      cartSection.style.display = cartSection.style.display === 'none' ? 'block' : 'none';
+  cartIcon.addEventListener('click', () => {
+    cartSection.style.display = cartSection.style.display === 'none' ? 'block' : 'none';
       renderCartItems();
   });
   
-    renderProducts('all');
-    renderFarmers(); // Call the renderFarmers function from farmers.js
-  
-    categorySelect.addEventListener('change', function() {
-      const selectedCategory = this.value;
-      renderProducts(selectedCategory);
-    });
-  
-    productList.addEventListener('click', function(event) {
-      if (event.target.classList.contains('add-to-cart')) {
-        const productName = event.target.previousElementSibling.previousElementSibling.textContent;
-        alert(`${productName} added to cart!`);
+    renderProducts('all'); // Call the renderProducts function
 
-        function addToCart(product) {
-          let cart = JSON.parse(localStorage.getItem('cart')) || [];
-          cart.push(product);
-          localStorage.setItem('cart', JSON.stringify(cart));
-          updateCartCount();
-      }
-      }
-    });
+     // Check if categorySelect exists before adding event listener
+     if (categorySelect) {
+      categorySelect.addEventListener('change', function() {
+          renderProducts(this.value);
+      });
+  }
+  
 
  });

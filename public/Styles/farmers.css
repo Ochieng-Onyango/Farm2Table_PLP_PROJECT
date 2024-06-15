@@ -1,4 +1,18 @@
-.farmer {
+/* farmer.css */
+#farmers {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.farmer-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  margin: 20px 0;
+}
+
+.farmer-item {
     width: 100%;
     margin: 10px;
     padding: 20px;
@@ -11,7 +25,7 @@
     align-items: center;
   }
   
-  .farmer img {
+  .farmer-item img {
     max-width: 100%;
     height: auto;
     max-height: 200px;
@@ -19,15 +33,37 @@
     margin-bottom: 10px;
   }
 
-  .farmer p:last-child {
+  #farmers h2 {
+    font-size: 36px;
+}
+
+.farmer-item h3 {
+  margin: 10px 0;
+}
+
+
+  .farmer-item p:last-child {
     margin-top: 10px;
   }
   
-  .farmer a {
+  .farmer-item a {
     color: #333;
     text-decoration: none;
   }
   
-  .farmer a:hover {
+  .farmer-item a:hover {
     text-decoration: underline;
   }
+
+/* responsive styles */
+@media (max-width: 768px) {
+  .farmer-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 farmers per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .farmer-container {
+    grid-template-columns: 1fr; /* 1 farmer per row on mobile */
+  }
+}

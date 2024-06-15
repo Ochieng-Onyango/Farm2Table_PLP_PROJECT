@@ -1,3 +1,4 @@
+// farmers.js
 const farmers = [
   {name: 'Joshua Kimani', 
     image: '../images/Josh.jpg', 
@@ -28,10 +29,14 @@ const farmers = [
 
 function renderFarmers() {
   const farmerList = document.querySelector('.farmer-list');
+  if (!farmerList) {
+    console.error('Farmer list element not found');
+    return;
+  }
   farmerList.innerHTML = '';
   farmers.forEach(farmer => {
     const farmerItem = document.createElement('div');
-    farmerItem.classList.add('farmer');
+    farmerItem.classList.add('farmer-item');
     farmerItem.innerHTML = `
       <img src="${farmer.image}" alt="${farmer.name}">
       <h3>${farmer.name}</h3>
@@ -42,3 +47,7 @@ function renderFarmers() {
     farmerList.appendChild(farmerItem);
   });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderFarmers();
+}); // Call the renderFarmers function

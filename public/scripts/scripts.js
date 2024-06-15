@@ -1,3 +1,4 @@
+// scripts.js
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.querySelector('form[action="/register"]');
     const loginForm = document.querySelector('form[action="/login"]');
