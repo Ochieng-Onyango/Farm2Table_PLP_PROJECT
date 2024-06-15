@@ -22,9 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
                 <p>Price: $${product.price.toFixed(2)}</p>
+                <p>Quantity: ${product.quantity}</p>
             `;
             cartGrid.appendChild(cartItem);
-            total += product.price;
+            total += product.price * product.quantity;
         });
     
         totalPrice.textContent = `Total: $${total.toFixed(2)}`;

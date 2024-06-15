@@ -21,8 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize cart count
     function updateCartCount() {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cartCount.textContent = cart.length;
-      localStorage.setItem('cartCount', cart.length);
+      let cartCount = 0;
+      cart.forEach(product => {
+          cartCount += product.quantity;
+      });
+      localStorage.setItem('cartCount', cartCount);
+      document.querySelector('.cart-count').textContent = cartCount;
   }
   updateCartCount(); // Initial call to set the cart count
 
@@ -57,7 +61,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function addToCart(product) {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Check if the product already exists in the cart
+    const existingProductIndex = cart.findIndex(item => item.name === product.name);
+
+    if (existingProductIndex !== -1) {
+        // If the product exists, increase the quantity
+        cart[existingProductIndex].quantity += 1;
+    } else {
+        // If the product does not exist, add it with a quantity of 1
+      product.quantity = 1;
       cart.push(product);
+
+    }
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
       alert(`${product.name} added to cart!`);
