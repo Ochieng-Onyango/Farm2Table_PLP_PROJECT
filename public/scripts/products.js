@@ -1,15 +1,15 @@
 //products.js
 document.addEventListener('DOMContentLoaded', function() {
     const products = [
-      {name: 'Fresh Eggs', category: 'eggs', price: 8.0, image: '../images/egg.jpg' },
-      { name: 'Meat', category: 'meat', price: 10.00, image: '../images/meat.jpg' },
-      { name: 'Chicken', category: 'chicken', price: 13.00, image: '../images/chicken.png' },
-      { name: 'Fertilised Eggs', category: 'eggs', price: 8.0, image: '../images/eggs.jpg' },
-      { name: 'Chopped-Chicken-Meat', category: 'meat', price: 10.00, image: '../images/chopped.webp' },
-      { name: 'Cockrel', category: 'chicken', price: 13.00, image: '../images/cockrel.webp' },
-      { name: 'Turkey', category: 'turkey', price: 20.00, image: '../images/turkey.jpg' },
-      { name: 'Turkey-Eggs', category: 'eggs', price: 10.00, image: '../images/turkey-eggs.jpg' },
-      { name: 'Marinated-Turkey', category: 'meat', price: 15.00, image: '../images/marinated-turkey.jpg' },
+      {name: 'Fresh Eggs', category: 'eggs', price: 8.0, image: './images/egg.jpg' },
+      { name: 'Meat', category: 'meat', price: 10.00, image: './images/meat.jpg' },
+      { name: 'Chicken', category: 'chicken', price: 13.00, image: './images/chicken.png' },
+      { name: 'Fertilised Eggs', category: 'eggs', price: 8.0, image: './images/eggs.jpg' },
+      { name: 'Chopped-Chicken-Meat', category: 'meat', price: 10.00, image: './images/chopped.webp' },
+      { name: 'Cockrel', category: 'chicken', price: 13.00, image: './images/cockrel.webp' },
+      { name: 'Turkey', category: 'turkey', price: 20.00, image: './images/turkey.jpg' },
+      { name: 'Turkey-Eggs', category: 'eggs', price: 10.00, image: './images/turkey-eggs.jpg' },
+      { name: 'Marinated-Turkey', category: 'meat', price: 15.00, image: './images/marinated-turkey.jpg' },
     ];
   
     let cart = JSON.parse(localStorage.getItem('cart')) || [];

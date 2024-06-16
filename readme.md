@@ -16,3 +16,74 @@ After placing an order, customers receive real-time updates on their order statu
 
 #### Overall Experience:
 The Farm2Table app revolutionizes the way customers access locally sourced, farm-fresh poultry, offering a seamless and transparent experience that connects them directly with farmers. This promotes a sustainable and community-driven food ecosystem.
+
+### Step 1: Project Setup
+Create a new directory for your project and navigate into it.
+
+    mkdir PLP_2024FEB_COHORT_PROJECT
+    cd PLP_2024FEB_COHORT_PROJECT
+
+### Initialize a new Node.js project.
+    npm init -y
+
+### Install necessary dependencies.
+    npm install express mysql body-parser
+
+### Step 2: Set up the Backend
+    Create a server.js file in your project directory.
+    Create a MySQL database named farm2table
+        CREATE DATABASE farm2table;
+    USE farm2table;
+
+    CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    is_farmer BOOLEAN NOT NULL DEFAULT 0
+    );
+
+    CREATE TABLE farmers (
+    id INT PRIMARY KEY,
+    farm_name VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    FOREIGN KEY (id) REFERENCES users(id)
+    );
+
+    CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    farmer_id INT NOT NULL,
+    FOREIGN KEY (farmer_id) REFERENCES farmers(id)
+    );
+
+    CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    order_date DATETIME NOT NULL,
+    status VARCHAR(255) NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES users(id)
+    );
+
+    CREATE TABLE order_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders(id),
+    FOREIGN KEY (product_id) REFERENCES products(id)
+    );
+
+### Step 3: Frontend Setup
+    Create a home.html file for the homepage.
+    Create an about.html file for the about us page.
+    Create a contact.html file for the contact us.
+    Create a general.css file to style HTML.
+    Create a script.js file to handle frontend interactions.
+### Step 4: Testing
+    node server.js
+    Open web browser and navigate to http://localhost:3000.

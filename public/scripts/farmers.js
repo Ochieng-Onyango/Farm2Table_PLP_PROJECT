@@ -1,7 +1,7 @@
 // farmers.js
 const farmers = [
   {name: 'Joshua Kimani', 
-    image: '../images/Josh.jpg', 
+    image: './images/Josh.jpg', 
     bio: 'Joshua has been a farmer for over 20 years and specializes in organic poultry farming.', 
     contact: { 
     email: 'joshua_kimani@farm2table.com', 
@@ -9,7 +9,7 @@ const farmers = [
    }
   },
   {name: 'Loureen Kivutha', 
-    image: '../images/Loureen.jpg', 
+    image: './images/Loureen.jpg', 
     bio: `Loureen is a fourth-generation poultry farmer who takes great pride in her family's farming traditions.`, 
     contact: { 
       email: 'loureenkivutha@farm2table.com', 
@@ -17,7 +17,7 @@ const farmers = [
     }
   },
   {name: 'Winnie Atieno', 
-    image: '../images/Winnie.jpg', 
+    image: './images/Winnie.jpg', 
     bio: 'Winnie is passionate about sustainable poultry farming practices and believes in preserving the environment.', 
     contact: { 
       email: 'winnie@farm2table.com', 

@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="icon" type="image/x-icon" href="../images/Farm2Table.png">
+    <link rel="icon" type="image/x-icon" href="./images/Farm2Table.png">
     <link rel="stylesheet" href="./Styles/general.css">
     <link rel="stylesheet" href="./Styles/contact.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="home.html" id="logo"><img src="../images/Farm2Table.png" alt=""></a>
+            <a href="home.html" id="logo"><img src="./images/Farm2Table.png" alt=""></a>
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -22,7 +22,7 @@
                 <li>
                   <div class="cart-icon">
                     <a href="orders.html">
-                        <img src="../images/cart-icon.png" alt="">
+                        <img src="./images/cart-icon.png" alt="">
                         <span class="cart-count"></span>
                     </a>
                 </div>
@@ -38,7 +38,7 @@
     <section class="form">
         <div class="contact-form" id="contact">
             <h2>Contact Us</h2>
-            <form action="/submit_form" method="post">
+            <form action="/contact/submit_form" method="post">
               <input type="text" name="name" placeholder="Your name" required>
               <input type="text" name="email" placeholder="Your email" required>
               <textarea name="message" placeholder="Write something.." required></textarea>
